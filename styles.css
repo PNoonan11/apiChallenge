@@ -1,11 +1,7 @@
 html {
-    font-family: sans-serif;
-    /* background-image: url("./assets/black-concrete-wall.jpg"); */
+    font-family: sans-serif;   
     background-color: rgb(23, 23, 26);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-
-  }
+      }
 
 
 
@@ -90,7 +86,7 @@ html {
 
 body {
 	/* background: rgb(70, 70, 70); */
-  background-image: url('./assets/bg.avif');
+  background-image: url('./assets/bg.png');
   
 background-attachment: fixed;
   font-size: 15px;
