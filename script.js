@@ -12,22 +12,44 @@ const submitBtn = document.querySelector('#submit');
 const nav = document.querySelector('nav');
 const section = document.querySelector('section');
 
+const loader = document.querySelector("#loading");
+
 searchForm.addEventListener('submit', fetchArt);
 
+// showing loading
+function displayLoading() {
+    loader.classList.add("display");
+    // to stop loading after some time
+    setTimeout(() => {
+        loader.classList.remove("display");
+    }, 5000);
+}
+
+// hiding loading 
+function hideLoading() {
+    loader.classList.remove("display");
+}
+
+
 function fetchArt(e) {
+    
     e.preventDefault();
-            searchURL = `https://api.artic.edu/api/v1/artworks/search?q=${searchTerm.value}`;while (section.firstChild) {
-                section.removeChild(section.firstChild);
-            }
+    searchURL = `https://api.artic.edu/api/v1/artworks/search?q=${searchTerm.value}`;while (section.firstChild) {
+        section.removeChild(section.firstChild);
+    }
     // searchURL = `https://api.artic.edu/api/v1/artworks/search?q=monet`;
     console.log('URL:', searchURL);
     
+    
     fetch(searchURL)
+    //loader
+    
     .then(function (result) {
+        displayLoading();
         //console.log(result);
         return result.json();
     })
-    .then(function (json) {
+    .then(function (json) {        
         console.log("line 31" + json);
         let artwork = json.data;
         
@@ -36,10 +58,12 @@ function fetchArt(e) {
             .then(response => {
                 //console.log(response);
                 return response.json();
+                
             })
             .then(finalBoss => {
              console.log(finalBoss);
                 displayArt(finalBoss);
+                hideLoading();
             })
             .catch(error => console.log("There is an error:", error))
         //displayArt(artwork)
