@@ -1,6 +1,7 @@
 html {
     font-family: sans-serif;
-    background-image: url("./assets/black-concrete-wall.jpg");
+    /* background-image: url("./assets/black-concrete-wall.jpg"); */
+    background-color: rgb(23, 23, 26);
     background-attachment: fixed;
     background-repeat: no-repeat;
 
@@ -16,11 +17,14 @@ html {
   form p:nth-of-type(1) {
     margin-top: 5px;
   }
+  ::placeholder {
+    color: cadetblue;
+    opacity: 1;}
 
   h1 {
     font-size: 35px;
     text-align: center;
-    background: -webkit-linear-gradient(180deg, rgba(58,181,205,1) 9%, rgba(27,104,119,1) 75%, rgba(58,181,205,1) 98%);
+    background: -webkit-linear-gradient(180deg, cadetblue 9%, rgba(27,104,119,1) 75%, cadetblue 98%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
@@ -35,7 +39,7 @@ html {
     padding-left: 25px;
     font-size: 35px;
     text-align: left;
-    background: -webkit-linear-gradient(315deg, rgba(58,181,205,1) 9%, rgba(27,104,119,1) 75%, rgba(58,181,205,1) 98%);
+    background: -webkit-linear-gradient(180deg, cadetblue 9%, rgba(27,104,119,1) 75%, cadetblue 98%);
     -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   }
@@ -101,6 +105,7 @@ background-attachment: fixed;
   float: center;
   padding: 5px;
   position: relative;
+  color: cadetblue;
 }
 
 input[type="text"] {
@@ -111,7 +116,7 @@ input[type="text"] {
   font-weight: 100;
   border: none;
   outline: none;
-  color: darkgrey;
+  color: cadetblue;
   padding: 3px;
   padding-right: 60px;
   width: 0px;
@@ -131,7 +136,7 @@ input[type="text"]:focus:hover {
 input[type="text"]:focus {
   width: 600px;
   z-index: 1;
-  border-bottom: 1px solid rgb(3, 3, 3);
+  border-bottom: 1px solid cadetblue;
   cursor: text;
 }
 input[type="submit"] {
@@ -150,8 +155,7 @@ input[type="submit"] {
   cursor: pointer;
   opacity: 0.4;
   cursor: pointer;
-  transition: opacity .2s ease;
-}
+ }
 
 
 
@@ -172,9 +176,6 @@ button {
   padding: 8px 0;
   cursor: pointer;
 }
-
-/* creating css loader */
-
 #loading {
   width: 2rem;
   height: 2rem;
