@@ -84,6 +84,9 @@ function fetchArt(e) {
     let heading = document.createElement('h2');
          heading.textContent = art.data.title;
          section.appendChild(heading);
+    let artDate = document.createElement('p');
+            artDate.textContent = art.data.date_display;
+            section.appendChild(artDate);
     let artDescription = document.createElement('p');
             artDescription.textContent = art.data.thumbnail.alt_text;
             section.appendChild(artDescription);
@@ -92,6 +95,7 @@ function fetchArt(e) {
     clearfix.setAttribute('class', 'clearfix');
             artDisplay.appendChild(artistsName);
             artDisplay.appendChild(heading);
+            artDisplay.appendChild(artDate);
             artDisplay.appendChild(img);
             artDisplay.appendChild(artDescription);
             artDisplay.appendChild(clearfix);
